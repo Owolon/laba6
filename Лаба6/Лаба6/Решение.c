@@ -24,6 +24,7 @@ int main()
 	double x;
 	double y;
 
+	printf("Введите значение Y:\n");
 	scanf_s("%lf", &x);
 	y = x <= 1 ? 0 : 1 / (x + 6);
 	/*if (x <= 1)
@@ -35,14 +36,35 @@ int main()
 		y = 1 / (x + 6);
 	}
 	*/
-	printf("Результат: %lf", y);
+	printf("Результат: %lf\n", y);
 
-	return 0;
+	
 //3
-	int xx;
-	int yy;
+	int xw, p = 0,o = 0;
+	int yw, t = 0;
+	printf("Введите заначение часов(0-12):\n");
+	scanf_s("%d", &xw);
+	printf("Введите заначение минут:\n");
+	scanf_s("%d", &yw);
 
-	scanf_s("%lf", &xx);
-	scanf_s("%lf", &yy);
-
+	if (yw != 60) {
+		p = 60 - yw;
+		t = xw * 5;
+		yw = 60;
+		if (yw == 60) {
+			if (xw == 12||xw==0) {
+				p += 5;
+				o += 1;
+			}
+			xw += 1;
+		}
+	}
+	if (o == 1) {
+		printf("\nОтвет: %d", p);
+	}
+	else (o == 0);
+	{
+		printf("\nОтвет: %d", t + p);
+	}
+	return 0;
 }
